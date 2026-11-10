@@ -1,0 +1,3 @@
+# Sitio de prueba: no indexar
+User-agent: *
+Disallow:
