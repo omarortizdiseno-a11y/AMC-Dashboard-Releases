@@ -4,7 +4,7 @@ header('Content-Type: application/json; charset=utf-8');
 header('X-Robots-Tag: noindex');
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') { http_response_code(405); echo json_encode(['ok'=>false]); exit; }
 if (!empty($_POST['web'])) { echo json_encode(['ok'=>true]); exit; } // honeypot anti-spam
-$to = 'contratacion@yomellamomarcanthony.com';
+$to = 'yomellamomarcanthony2017@gmail.com';
 $c = fn($k) => trim(strip_tags(substr($_POST[$k] ?? '', 0, 2000)));
 $nombre=$c('nombre'); $email=filter_var($c('email'), FILTER_VALIDATE_EMAIL); $tel=$c('telefono');
 if (!$nombre || !$email || !$tel) { http_response_code(422); echo json_encode(['ok'=>false,'error'=>'Faltan datos']); exit; }

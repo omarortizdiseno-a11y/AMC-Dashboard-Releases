@@ -1,3 +1,5 @@
-# Sitio de prueba: no indexar
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /contacto.php
+
+Sitemap: https://yomellamomarcanthony.com/sitemap.xml

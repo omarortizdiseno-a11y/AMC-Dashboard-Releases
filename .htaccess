@@ -60,8 +60,3 @@ Header always set Referrer-Policy "strict-origin-when-cross-origin"
 Header always set X-Frame-Options "SAMEORIGIN"
 Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
 </IfModule>
-
-# Dominio temporal: evitar indexación
-<IfModule mod_headers.c>
-Header set X-Robots-Tag "noindex, nofollow"
-</IfModule>
