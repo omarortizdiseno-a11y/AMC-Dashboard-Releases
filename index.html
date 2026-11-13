@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0b0b0d">
+<title>Gestión del show · Yo Me Llamo Marc Anthony</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+
+<!-- Ingreso -->
+<section id="login" class="login" hidden>
+  <form class="login-card" id="loginForm" autocomplete="on">
+    <img src="logo.svg" alt="Yo Me Llamo Marc Anthony" class="login-logo">
+    <h1 id="loginTitle">Portal de gestión</h1>
+    <p id="loginHint" class="muted">Ingresa tu contraseña.</p>
+    <input type="text" name="username" value="manager" autocomplete="username" hidden>
+    <label class="fld"><span>Contraseña</span>
+      <input type="password" id="pw1" autocomplete="current-password" required minlength="8">
+    </label>
+    <label class="fld" id="pw2wrap" hidden><span>Repite la contraseña</span>
+      <input type="password" id="pw2" autocomplete="new-password" minlength="8">
+    </label>
+    <p id="loginErr" class="err" role="alert"></p>
+    <button class="btn primary wide" id="loginBtn">Entrar</button>
+  </form>
+</section>
+
+<!-- Aplicación -->
+<div id="app" hidden>
+  <header class="top">
+    <div class="brand">
+      <img src="logo.svg" alt="" class="top-logo">
+      <span class="brand-sub">Gestión del show</span>
+    </div>
+    <nav class="tabs" id="tabs" role="tablist">
+      <button data-tab="tablero" class="on">Tablero</button>
+      <button data-tab="cuestionario">Cuestionario</button>
+      <button data-tab="presupuesto">Presupuesto</button>
+      <button data-tab="contrato">Contrato</button>
+      <button data-tab="agenda">Agenda y cobros</button>
+      <button data-tab="guia">Guía del manager</button>
+      <button data-tab="ajustes">Ajustes</button>
+    </nav>
+    <div class="top-right">
+      <span id="saveState" class="save-state">Guardado</span>
+      <button class="btn ghost sm" id="logoutBtn" title="Cerrar sesión">Salir</button>
+    </div>
+  </header>
+
+  <!-- Barra del evento activo (en Cuestionario, Presupuesto y Contrato) -->
+  <div class="evbar" id="evbar" hidden>
+    <label>Evento
+      <select id="evSelect"></select>
+    </label>
+    <label>Etapa
+      <select id="evStage"></select>
+    </label>
+    <button class="btn ghost sm" id="evNew">+ Nuevo evento</button>
+    <button class="btn ghost sm danger" id="evDel">Eliminar</button>
+  </div>
+
+  <main>
+    <section data-panel="tablero" class="panel on" id="pTablero"></section>
+    <section data-panel="cuestionario" class="panel" id="pCuestionario"></section>
+    <section data-panel="presupuesto" class="panel" id="pPresupuesto"></section>
+    <section data-panel="contrato" class="panel" id="pContrato"></section>
+    <section data-panel="agenda" class="panel" id="pAgenda"></section>
+    <section data-panel="guia" class="panel" id="pGuia"></section>
+    <section data-panel="ajustes" class="panel" id="pAjustes"></section>
+  </main>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="vendor/pdfmake.min.js" defer></script>
+<script src="vendor/vfs_fonts.js" defer></script>
+<script src="app.js?v=1" defer></script>
+</body>
+</html>

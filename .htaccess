@@ -1,0 +1,12 @@
+DirectoryIndex index.html
+Options -Indexes
+Header set X-Robots-Tag "noindex, nofollow"
+Header set X-Frame-Options "DENY"
+Header set Referrer-Policy "same-origin"
+RewriteEngine On
+RewriteRule (^|/)\.git(/|$) - [F,L]
+RewriteRule ^data(/|$) - [F,L]
+RewriteRule ^(README\.md|\.gitignore)$ - [F,L]
+<FilesMatch "\.(html|js|css)$">
+  Header set Cache-Control "no-cache"
+</FilesMatch>
